@@ -1,0 +1,122 @@
+(((((((((((((((((((  from 1 to 12 ))))))))))))))))))))))))))) 
+
+
+
+Select * from Employee
+
+Select fname, lname, salary, Dno from Employee
+
+Select Pname, Plocation, Dnum from Project 
+
+Select Fname, Lname, Salary * 12 * 0.1 as 'ANNUAL COMM' from Employee
+
+Select SSN, Fname from Employee where Salary > 1000
+
+Select SSN, Fname from employee where (Salary * 12) > 10000
+
+Select Fname, Salary from Employee where gender = 'f'
+
+Select Dname, Dnumber from Department where MGRSSN = 968574
+
+Select Pnumber, Pname, Plocation from Project where Dnum = 10
+
+Select Pnumber, Pname, Plocation from Project where City = 'Cairo' OR City = 'Alex'
+
+Select * from Project where Pname Like 'A%'
+
+Select * from Employee where (Salary between 10000 and 20000) and Dno = 30 
+
+
+
+(((((((((((((  from 1 to 6 in DML   )))))))))))))))))))))
+
+
+
+
+
+insert into Employee([SSN],[Fname], [Lname], [BDATE], [Address],[gender] , [Salary], [Superssn], [Dno])
+values (102660, 'Abdullah', 'Gomaa', '2001/1/31','Mit Salsil Dakahlia', 'M', 150000, 112233, 30) 
+
+insert into Employee([SSN],[Fname], [Lname], [BDATE], [Address],[gender] , [Salary], [Superssn], [Dno])
+values (102632, 'Abdullgalil', 'Ahmed', '2001/4/6','Mit Salsil Dakahlia', 'M', 150000, 112233, 30)
+
+insert into Department([Dname], [Dnumber], [MGRSSN], [MGRSDATE]) 
+values ('DEPT IT', 100, 112233, '2006/11/1')
+
+
+UPDATE Employee 
+SET  Dno = 100 
+WHERE Fname = 'Noha' and Lname = 'Mohamed'
+
+UPDATE Employee 
+SET  Dno = 20 
+WHERE Fname = 'Abdullah'
+
+UPDATE Employee 
+SET  Superssn = 102660 
+WHERE Fname = 'Abdullgalil'
+
+
+select Superssn from Employee where Fname = 'Abdullgalil'
+
+DELETE FROM Dependent Where ESSN = 223344
+
+DELETE FROM WorksFor Where ESSN = 223344
+
+
+select * from Department
+
+UPDATE Department  
+SET  MGRSSN = NULL
+where MGRSSN = 223344
+
+ALTER TABLE Employee 
+ALTER COLUMN SUPERSSN INT NULL
+
+ALTER TABLE Employee 
+ALTER COLUMN Dno INT NULL
+
+
+UPDATE Employee  
+SET  Superssn = NULL
+where SSN = 223344
+
+UPDATE Employee  
+SET  Dno = NULL
+where SSN = 223344
+
+
+DELETE FROM Department Where MGRSSN = 223344 
+
+
+UPDATE Employee  
+SET  Fname = 'NULL' 
+where SSN = 223344
+
+UPDATE Employee  
+SET  Lname = 'NULL' 
+where SSN = 223344
+
+UPDATE Employee  
+SET  Dno = 10 
+where SSN = 223344
+ 
+UPDATE Employee  
+SET  Superssn =  223344
+where SSN = 223344
+
+UPDATE Employee  
+SET  Address = 'NULL'
+where SSN = 223344
+
+ALTER TABLE Employee 
+ALTER COLUMN SUPERSSN INT not null
+
+ALTER TABLE Employee 
+ALTER COLUMN Dno INT NOT NULL
+
+UPDATE Employee  
+SET  Superssn = 968574 
+where Superssn = 223344
+
+DELETE FROM Employee Where SSN = 223344
